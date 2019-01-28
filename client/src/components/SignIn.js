@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { assignUsername } from '../actions/chat'
+import '../styles/signin.css'
 
 
 class SignIn extends Component {
@@ -22,11 +23,17 @@ class SignIn extends Component {
 
   render() {
     return (
-      <form autocomplete="off"onSubmit={this.handleSubmit}>
-          <input type="text" name="username" value={this.state.username} onChange={this.handleChange} placeholder="Enter a username" />
-          <button type="submit">Sign In</button>
-          
-      </form>
+        <div>
+            <form id="signinForm" autoComplete="off"onSubmit={this.handleSubmit}>
+                <img id="signinLogo" src="/logo.png"></img>
+                <h1 id="signinTitle">Create a Username</h1>
+                <div className="username-input-container">
+                    <input id="signinInput" type="text" name="username" value={this.state.username} onChange={this.handleChange} />
+                    <br />
+                    <button id="signinButton" type="submit">Sign In</button>
+                </div>
+            </form>
+        </div>
     )
   }
 }

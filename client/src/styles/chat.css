@@ -1,7 +1,75 @@
 html {box-sizing:border-box;}
 *,* :after, *:before {box-sizing:inherit;}
 
+#room {
+    max-height: 498px;
+    overflow: scroll;
+    padding-left: 25px;
+}
+
+#input {
+    margin-top: auto;
+    vertical-align: bottom;
+}
+
+#chatInput {
+    width: 670px;
+    height: 50px;
+    font-size: 20px;
+}
+
+input, button:focus {
+    outline: none;
+}
+
+#chatButton {
+    height: 49px;
+    padding: 10px;
+    background-color: transparent;
+    margin-left: -31px;
+    border: none;
+    font-size: 21px;
+}
 .chatContainer {
+    display: flex;
     border: 1px solid black;
     margin: auto;
+    width: 70%;
+    height: 550px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.innerChatContainer {
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    width: 700px;
+    border-left: 1px solid black;
+    height: 548px;
+}
+
+.username {
+    color: orange;
+}
+
+ul {
+    list-style: none;
+    margin-left: 14px;
+}
+
+li {
+    margin: 20px;
+    font-size: 20px;
+}
+
+#channel {
+    text-align: center;
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+a {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
 }

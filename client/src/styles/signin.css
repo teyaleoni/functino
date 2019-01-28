@@ -1,0 +1,46 @@
+html {box-sizing:border-box;}
+*,* :after, *:before {box-sizing:inherit;}
+
+#signinLogo {
+    width: 222px;
+    height: 200px;
+}
+
+#signinForm {
+  width: 50%;
+  border: 3px solid gray;
+  padding: 10px;
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  height: 400px;
+}
+
+#signinTitle {
+    color:black;
+    letter-spacing: 1px;
+    text-decoration: underline;
+}
+
+#signinInput {
+    height: 100%;
+    width: 80%;
+    font-size: 25px;
+    text-align: center;
+    color: orange;
+
+}
+
+#signinButton {
+    margin-top: 15px;
+    height: 100%;
+    width: 20%;
+    background-color: lightgrey;
+    padding: 3px;
+}
+
+.username-input-container {
+    width: 100%;
+    height: auto;
+}

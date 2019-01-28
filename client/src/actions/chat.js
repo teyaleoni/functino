@@ -8,12 +8,12 @@ const socket = io.connect()
 
 export function addMessage(message) {
   const username = store.getState().chatReducer.username
-
+ 
   socket.emit('new message', {
     roomname: message.roomname,
     username: username,
     message: message.message
-  })
+  }) 
 }
 
 export function assignUsername(username) {
@@ -25,13 +25,15 @@ export function assignUsername(username) {
 
     resolve()
   })
-
+ 
   return promise
 }
 
 socket.on('new message', (message) => {
+     
   store.dispatch({
     type: 'ADD_MESSAGE',
     message: message
   })
+ 
 })  
