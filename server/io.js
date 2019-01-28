@@ -9,7 +9,6 @@ export default function(server) {
     socket.join('random')
     socket.on('new message', (message) => {
       io.to(message.roomname).emit('new message', message)
-      io.emit('new message', message)
     })
     console.log('User has connected to socket server')
   })

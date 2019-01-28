@@ -71,6 +71,7 @@ class Chat extends Component {
 }
 
 function mapStateToProps(appState, ownProps) {
+  
   const roomname = ownProps.match.params.roomname
   return {
     messages: appState.chatReducer.messages.filter(message => message.roomname == roomname),

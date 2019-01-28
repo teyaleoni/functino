@@ -4,7 +4,7 @@ import io from 'socket.io-client'
 
 axios.defaults.baseURL = '/api'
 
-const socket = io.connect()
+const socket = io.connect('http://localhost:3001')
 
 export function addMessage(message) {
   const username = store.getState().chatReducer.username
