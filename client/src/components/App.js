@@ -6,6 +6,7 @@ import store from '../store'
 
 import Chat from './Chat'
 import SignIn from './SignIn'
+import AddChannel from './AddChannel'
 
 class App extends Component {
   render() {
@@ -14,7 +15,9 @@ class App extends Component {
         <Router>
           <div>
             <Route path="/" exact component={SignIn} />
-            <Route path="/:roomname" component={Chat} />
+            <Route path="/add/channel" exact component={AddChannel} />
+            <Route path="/:roomname" exact component={Chat} />
+            
           </div>
         </Router>
       </Provider>

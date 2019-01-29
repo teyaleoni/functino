@@ -25,7 +25,7 @@ class SignIn extends Component {
     return (
         <div>
             <form id="signinForm" autoComplete="off"onSubmit={this.handleSubmit}>
-                <img id="signinLogo" src="/logo.png"></img>
+                <img id="signinLogo" src="/logo.png" alt="functino"></img>
                 <h1 id="signinTitle">Create a Username</h1>
                 <div className="username-input-container">
                     <input id="signinInput" type="text" name="username" value={this.state.username} onChange={this.handleChange} />

@@ -9,6 +9,7 @@ class Chat extends Component {
    message: ''
  }
 
+
  handleChange = e => {
    this.setState({
      [e.target.name]:e.target.value
@@ -41,28 +42,37 @@ class Chat extends Component {
   })
  }
   render() {
+    var channelList = this.props.channels.map((chan, i) => {
+      return (
+        <li key={`channel-${chan}-${i}`}><Link to={`/${chan}`}>#{chan}</Link></li>
+      )
+    })
     return (
-      <div className="chatContainer">
+      <div className="mainContainer">
         <div id="sidebar">
-          <img id="signinLogo" src="/logo.png"></img>
-          <p id="channel">Channels</p>
+          <img id="signinLogo" src="/logo.png" alt="functino"></img>
+          <p id="channel">channels</p> 
+          <Link to="/add/channel"><button id="addChannel"><i className="fa fa-plus-circle"></i></button> </Link>
           <ul>
-              <li><Link to="/default">Default</Link></li>
-              <li><Link to="/general">General</Link></li>
-              <li><Link to="/random">Random</Link></li>
+             {channelList}
             </ul>
         </div>
-        <div className="innerChatContainer"> 
-          <div id="room">
-            {this.props.messages.map((message, i) => (
-              <p key={message.roomname + "-message-" + i}><span className="username">{message.username}:</span> {message.message}</p>
-            ))}
+          <div className="chatContainer">
+          <div id="topbar">
+            <p id="roomTitle">#{this.props.match.params.roomname}</p>
           </div>
-          <div id="input">
-            <form autoComplete="off" onSubmit={this.handleSubmit}>
-              <input id="chatInput" type="text" name="message" value={this.state.message} onChange={this.handleChange} />
-              <button id="chatButton" type="submit"><i className="fa fa-angle-double-right"></i></button>
-            </form>
+          <div className="innerChatContainer"> 
+            <div id="room">
+              {this.props.messages.map((message, i) => (
+                <p id="message" key={message.roomname + "-message-" + i}><span className="username">{message.username}:</span> {message.message}</p>
+              ))}
+            </div>
+            <div id="input">
+              <form autoComplete="off" onSubmit={this.handleSubmit}>
+                <input id="chatInput" type="text" name="message" value={this.state.message} onChange={this.handleChange} placeholder="Message"/>
+                <button id="chatButton" type="submit"><i className="fa fa-angle-double-right"></i></button>
+              </form>
+          </div>
           </div>
         </div>
       </div>
@@ -74,8 +84,9 @@ function mapStateToProps(appState, ownProps) {
   
   const roomname = ownProps.match.params.roomname
   return {
-    messages: appState.chatReducer.messages.filter(message => message.roomname == roomname),
-    history: ownProps.history
+    messages: appState.chatReducer.messages.filter(message => message.roomname === roomname),
+    history: ownProps.history,
+    channels: appState.chatReducer.channels
   }
 }
 

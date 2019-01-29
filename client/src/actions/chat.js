@@ -37,3 +37,16 @@ socket.on('new message', (message) => {
   })
  
 })  
+
+ //emits to socket that a new channel is to be added by name
+export function addChannel(channel) {
+  socket.emit('add channel', channel)
+
+}
+ //goes together with above
+socket.on('add channel', (channel) => {
+  store.dispatch({
+    type:'ADD_CHANNEL',
+    channel: channel
+  })
+})

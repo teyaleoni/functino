@@ -1,6 +1,91 @@
 html {box-sizing:border-box;}
 *,* :after, *:before {box-sizing:inherit;}
 
+.mainContainer {
+    display: flex;
+    border: 3px solid black;
+    margin: auto;
+    width: 69%;
+    height: 550px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#sidebar {
+    border-right: 3px solid black;  
+}
+
+#addChannel {
+    float: right;
+    border: none;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+#channel {
+    display: inline-block;
+    font-size: 20px;
+    font-family: Bowlby One SC, sans-serif;
+    margin: 0px;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+#topbar {
+    border: 1px solid black;
+   background-color: gainsboro;
+   width: 100%;
+}
+
+#roomTitle {
+    padding-left: 10px;
+    
+}
+
+.chatContainer {
+    width: 100%;
+}
+
+.innerChatContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 91%;
+    background-color: grey;
+}
+
+#chatInput {
+    width: 73%;
+    height: 40px;
+    font-size: 15px;
+    margin: 13px;
+    padding: 10px;
+
+}
+
+input, button:focus {
+    outline: none;
+}
+
+::placeholder {
+    font-style: italic;
+    letter-spacing: 1px;
+    padding: 10px;
+    font-weight: 100;
+    opacity: 0.5;
+}
+
+#chatButton {
+    background-color: transparent;
+    border: none;
+    font-size: 39px;
+    width: 2%;
+    height: 5%;
+    position: absolute;
+    left: 68%;
+    top: 75%
+}
+
+
 #room {
     max-height: 498px;
     overflow: scroll;
@@ -12,41 +97,6 @@ html {box-sizing:border-box;}
     vertical-align: bottom;
 }
 
-#chatInput {
-    width: 670px;
-    height: 50px;
-    font-size: 20px;
-}
-
-input, button:focus {
-    outline: none;
-}
-
-#chatButton {
-    height: 49px;
-    padding: 10px;
-    background-color: transparent;
-    margin-left: -31px;
-    border: none;
-    font-size: 21px;
-}
-.chatContainer {
-    display: flex;
-    border: 1px solid black;
-    margin: auto;
-    width: 70%;
-    height: 550px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.innerChatContainer {
-    display: flex;
-    flex-direction: column;
-    height: 250px;
-    width: 700px;
-    border-left: 1px solid black;
-    height: 548px;
-}
 
 .username {
     color: orange;
@@ -54,22 +104,30 @@ input, button:focus {
 
 ul {
     list-style: none;
-    margin-left: 14px;
+    padding: 0px;
+    
 }
 
 li {
-    margin: 20px;
-    font-size: 20px;
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    
 }
 
-#channel {
-    text-align: center;
-    font-size: 25px;
-    text-decoration: underline;
-}
+
 
 a {
     color: black;
     cursor: pointer;
     text-decoration: none;
+}
+
+#message {
+    border: 1px solid grey;
+    padding: 10px;
+    width: 50%;
+    box-shadow: 3px 3px darkgray;
+    border-radius: 3px;
+    background-color: white;
 }
