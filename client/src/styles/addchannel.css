@@ -1,0 +1,29 @@
+html {box-sizing:border-box;}
+*,* :after, *:before {box-sizing:inherit;}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.addChannelContainer {
+    margin: auto;
+    width: 50%; 
+    margin-top: 80px;
+}
+
+.addbutton {
+    height: 35px;
+    margin-right: 3%;
+    padding: 8px;
+    cursor: pointer;
+}
+
+#addInput {
+    margin: 3%;
+    padding: 10px;
+    width: 50%;
+}
+
+label {
+    font-size: 26px;
+}
